@@ -1,0 +1,5 @@
+<div *ngIf="distance; else loading">{{distance}} <span appPluralRu="" [value]="distance" [arVariants]="['километров', 'километра', 'километров']"></span></div>
+
+<ng-template #loading>
+  Подсчет расстояния...
+</ng-template>

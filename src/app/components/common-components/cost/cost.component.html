@@ -1,0 +1,5 @@
+<div *ngIf="cost; else undefinedCost">Цена: <span style="font-weight: bold;">{{cost | currency:"Руб":'symbol':'1.0-0':'ru'}}</span></div>
+
+<ng-template #undefinedCost>
+  Цена неизвестна или бесплатно
+</ng-template>

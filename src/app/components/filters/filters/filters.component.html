@@ -1,0 +1,23 @@
+<h2 class="filtersHeader">Параметры поиска мест</h2>
+<mat-grid-list class="filtersGrid" [cols]="breakpoint" rowHeight="2:0.5">
+  <app-drop-down class="filterItem" [name]="'transportationType'"
+                 [caption]="'Как добраться'"
+                 [values]="getTransportationTypes() | async"
+                 (changed)="onTransportationTypeChanged($event)">
+  </app-drop-down>
+
+  <app-drop-down class="filterItem"
+                 [name]="'distance'"
+                 [caption]="'Расстояние до объекта'"
+                 [values]="getDistances() | async"
+                 (changed)="onDistanceChanged($event)">
+  </app-drop-down>
+
+  <app-drop-down class="filterItem"
+                 [name]="'cost'"
+                 [caption]="'Не дороже'"
+                 [values]="costs"
+                 [defaultValue]="100000"
+                 (changed)="onCostChanged($event)">
+  </app-drop-down>
+</mat-grid-list>

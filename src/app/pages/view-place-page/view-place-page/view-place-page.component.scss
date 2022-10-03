@@ -1,0 +1,63 @@
+@import "../../basePage";
+
+$mapHeight:460px;
+
+.container{
+  @extend .pageContainer;
+  width: 100%;
+  overflow-y: auto;
+  flex-direction: row;
+}
+
+.place{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: $mapHeight;
+
+  .placeHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+  }
+  .placeDescription{
+    height: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 4px;
+
+    .placeDescriptionHeader{
+      width: 100%;
+      font-size: 1.8em;
+      font-weight: bold;
+      text-align: left;
+      padding: 4px 0 20px 10px;
+    }
+  }
+}
+
+.map{
+  width: 60%;
+  height: $mapHeight;
+}
+
+@media screen and (max-width: 800px) {
+  .container{
+    flex-direction: column;
+  }
+  .place{
+    width: 100%;
+
+    .placeDescription{
+      margin: 6px 0;
+      .placeDescriptionHeader{
+        text-align: center;
+        padding: 4px 0;
+      }
+    }
+  }
+}

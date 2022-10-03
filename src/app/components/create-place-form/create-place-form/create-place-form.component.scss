@@ -1,0 +1,45 @@
+:host{
+  width: 100%;
+  text-align: center;
+}
+
+.formContent{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map{
+  width: 100%;
+  height: 460px;
+}
+
+.fieldsGrid{
+  text-align: center;
+}
+
+.inputField{
+  padding: 2px;
+}
+.createButton{
+  max-width: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .map{
+    height: 360px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .map{
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .map{
+    height: 200px;
+  }
+}

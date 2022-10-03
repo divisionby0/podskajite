@@ -1,0 +1,12 @@
+<mat-grid-list class="placesGrid" [cols]="breakpoint" [rowHeight]="rowHeight">
+  <mat-grid-tile *ngFor="let place of places">
+    <a href="view-place/{{place.getId()}}">
+      <div class="rendererHitArea"></div>
+    </a>
+
+    <app-place-name [name]="place.getName()"></app-place-name>
+    <app-place-avatar [avatar]="place.getAvatar()"></app-place-avatar>
+    <app-distance [distance]="place.getDistance() | async"></app-distance>
+    <app-cost [cost]="place.getCost()"></app-cost>
+  </mat-grid-tile>
+</mat-grid-list>

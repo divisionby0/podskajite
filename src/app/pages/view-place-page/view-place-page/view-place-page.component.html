@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="place">
+    <div class="placeHeader">
+      <app-place-avatar [size]="'big'" [avatar]="currentPlace?.getAvatar()"></app-place-avatar>
+
+      <div style="width: 100%; display: flex; flex-direction: column; background-color: yellow;">
+        <app-place-name [name]="currentPlace?.getName()"></app-place-name>
+        <app-place-address [address]="currentPlace?.getAddress()"></app-place-address>
+      </div>
+
+    </div>
+    <app-place-description class="placeDescription" [description]="currentPlace?.getDescription()">
+      <div class="placeDescriptionHeader">Описание</div>
+    </app-place-description>
+  </div>
+
+  <app-place-page-map class="map" [place]="currentPlace" [center]="[currentPlace?.getLat(), currentPlace?.getLng()]"></app-place-page-map>
+</div>
+

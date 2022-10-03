@@ -1,0 +1,7 @@
+@import "../basePage";
+
+.container{
+  @extend .pageContainer;
+  overflow-y: auto;
+  flex-direction: column;
+}

@@ -1,0 +1,10 @@
+@import "../header/header.component";
+@import "../footer/footer.component";
+
+.pageContainer{
+  max-width:1280px;
+  height: calc(100% - #{$headerHeight} - #{$footerHeight});
+  height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+  display: flex;
+  margin: auto;
+}

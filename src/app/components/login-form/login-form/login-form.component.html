@@ -1,0 +1,28 @@
+<form [formGroup]="formGroup"
+      (input)="onFormChange()"
+      (ngSubmit)="onSubmit()">
+
+  <div class="formContent" [class.horizontal]="alignment === 'horizontal'">
+
+    <mat-grid-list class="fieldsGrid" [cols]="breakpoint" rowHeight="2:0.5">
+      <mat-form-field class="inputField">
+        <mat-label>Логин</mat-label>
+        <input matInput required formControlName="name">
+
+        <mat-error *ngIf="nameRequireError">Поле обязательное</mat-error>
+        <mat-error *ngIf="nameMinLengthError">Не менее {{nameMinLength}} символов</mat-error>
+        <mat-error *ngIf="nameWhitespacesOnlyError">Неверный формат</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Пароль</mat-label>
+        <input matInput required formControlName="password">
+        <mat-error>Поле обязательное</mat-error>
+      </mat-form-field>
+    </mat-grid-list>
+
+    <button class="submitButton" mat-raised-button color="primary" [disabled]="formGroup.invalid || busy">Логин</button>
+
+    <mat-error *ngIf="formError">{{formError}}</mat-error>
+  </div>
+</form>

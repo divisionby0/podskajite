@@ -1,0 +1,5 @@
+<app-login-form *ngIf="!loggedIn" (login)="onLogin($event)" [userName]="userName" [alignment]="'horizontal'"></app-login-form>
+<div *ngIf="loggedIn" style="height:100%; display: flex; flex-direction: row; align-items: center;">
+  <div>{{userName}}</div>
+  <button mat-raised-button color="basic" (click)="onLogout()">Выход</button>
+</div>

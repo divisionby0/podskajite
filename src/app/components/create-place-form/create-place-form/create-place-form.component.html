@@ -1,0 +1,62 @@
+<h2 style="padding-top: 4px;">Создание нового объекта</h2>
+<form [formGroup]="formGroup"
+      (input)="onFormChange()"
+      (ngSubmit)="onSubmit()">
+
+  <div class="formContent">
+    <app-place-position-setting-map class="map" (pointPositionChange)="onPointPositionChanged($event)" [markers]="mapMarkers"></app-place-position-setting-map>
+
+    <mat-grid-list class="fieldsGrid" [cols]="breakpoint" rowHeight="2:0.5">
+      <mat-form-field class="inputField">
+        <mat-label>Название</mat-label>
+        <input matInput required formControlName="name">
+
+        <mat-error *ngIf="nameRequireError">Поле обязательное</mat-error>
+        <mat-error *ngIf="nameMinLengthError">Не менее {{nameMinLength}} символов</mat-error>
+        <mat-error *ngIf="nameWhitespacesOnlyError">Неверный формат</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Latitude</mat-label>
+        <input matInput required type="number" min="0" formControlName="lat">
+        <mat-error>Поле обязательное</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Longitude</mat-label>
+        <input matInput required type="number" min="0" formControlName="lng">
+        <mat-error>Поле обязательное</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Стоимость</mat-label>
+        <input matInput required type="number" min="0" max="1000000" formControlName="cost">
+        <mat-error>Поле обязательное</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Основная картинка</mat-label>
+        <div>
+          <mat-toolbar>
+            <app-place-avatar [avatar]="avatarImage"></app-place-avatar>
+            <input matInput formControlName="avatar" readonly hidden/>
+          </mat-toolbar>
+
+          <input
+            type="file"
+            #fileInput
+            (change)="uploadFileEvt($event)"
+            accept="image/*"
+          />
+        </div>
+        <mat-error>Поле обязательное</mat-error>
+      </mat-form-field>
+    </mat-grid-list>
+
+    <button class="createButton" mat-raised-button color="primary" [disabled]="formGroup.invalid || busy">Создать</button>
+
+    <mat-error *ngIf="formError">{{formError}}</mat-error>
+  </div>
+
+</form>
+

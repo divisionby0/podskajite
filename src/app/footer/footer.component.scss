@@ -1,0 +1,14 @@
+@import "./../colors";
+@import "../common";
+
+
+.footer{
+  width: 100%;
+  height: $footerHeight;
+  background-color: $blue-color;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}

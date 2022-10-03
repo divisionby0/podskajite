@@ -1,0 +1,42 @@
+@import "../basePage";
+@import "../../colors";
+@import "../../common";
+
+.container{
+  @extend .pageContainer;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+.filtersAndMap{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.placesList{
+  height: calc(100vh - #{$headerHeight} - #{$footerHeight} - #{$filtersHeight});
+  overflow-y: auto;
+}
+
+.map{
+  width: 75%;
+  height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .filtersAndMap{
+    flex-direction: column;
+    height: unset;
+    min-height: unset;
+  }
+  .filters{
+    width: 100%;
+    height: unset;
+    min-height: unset;
+  }
+  .map{
+    width: 100%;
+    height: 300px;
+  }
+}

@@ -1,0 +1,7 @@
+<app-places-map
+  [zoom]="16"
+  [center]="center"
+  [markers]="markers"
+  (selfPosition)="onSelfPosition($event)"
+  (mapClick)="onMapClicked($event)">
+</app-places-map>

@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+  <mat-label>{{caption}}</mat-label>
+  <mat-select [(ngModel)]="selectedValue" name="{{name}}" value="0" (ngModelChange)="onChange($event)">
+    <mat-option *ngFor="let currentValue of values" [value]="currentValue.value">
+      {{currentValue.text}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

@@ -1,0 +1,5 @@
+<ya-map class="map" (ready)="mapReady($event)" [center]="center" [zoom]="zoom" [state]="{controls:[]}">
+  <ya-placemark *ngFor="let marker of markers" [geometry]="marker.position" [properties]="{iconCaption:marker.name}"
+                (yaclick)="onPlacemarkClicked(marker.id)">
+  </ya-placemark>
+</ya-map>

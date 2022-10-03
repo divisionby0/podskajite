@@ -1,0 +1,25 @@
+@import "../../../colors";
+@import "../../../common";
+
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 25%;
+  height: 100%;
+  min-height: $filtersHeight;
+}
+
+.filtersHeader{
+  color: $light-black-color;
+}
+
+.filtersGrid{
+  text-align: center;
+}
+
+.filterItem{
+  padding: 2px;
+}

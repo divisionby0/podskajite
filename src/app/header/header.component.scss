@@ -1,0 +1,19 @@
+@import "./../colors";
+@import "../common";
+
+.header{
+  width: 100%;
+  height: $headerHeight;
+  background-color: $blue-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menuItem{
+  font-weight: bold;
+  color: white;
+  padding: 0 10px;
+}
+
+

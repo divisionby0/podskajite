@@ -1,0 +1,11 @@
+<div class="header">
+  <div style="display: flex; flex-direction: row; width: 70%;">
+    <a class="menuItem" [routerLink]="'/'">Главная</a>
+    <a class="menuItem" [routerLink]="'about'">О нас</a>
+    <a *ngIf="canCreate" class="menuItem" [routerLink]="'/places/create'">Создать</a>
+  </div>
+  <div style="width: 30%; display: flex; flex-direction: row; justify-content: end;">
+    <ng-content></ng-content>
+  </div>
+
+</div>

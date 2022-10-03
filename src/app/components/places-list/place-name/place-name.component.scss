@@ -1,0 +1,10 @@
+@import "../../../colors";
+:host{
+  width: 100%;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bolder;
+  color: $light-black-color;
+  padding: 3px 0;
+}
+

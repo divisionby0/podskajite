@@ -1,0 +1,9 @@
+@import "../../pages/basePage";
+
+.container{
+  @extend .pageContainer;
+  width: 100%;
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: center;
+}
